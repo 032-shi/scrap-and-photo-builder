@@ -1,5 +1,4 @@
 # coding: UTF-8
-# https://github.com/codebox/mosaic
 import sys
 import os
 from PIL import Image, ImageOps
