@@ -10,7 +10,7 @@ def download_image(url, file_path):
 
 def main():
 
-  with open("ids.txt", "r") as f:
+  with open("ids.txt", "r") as f: #抽出するサムネイルのurlを記載しているids.txtを指定する
     lines = [x.strip() for x in f.readlines()]
     print(lines)
 
