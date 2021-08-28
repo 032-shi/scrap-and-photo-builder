@@ -4,9 +4,9 @@ import requests
 def download_image(url, file_path):
   r = requests.get(url, stream=True)
 
-  if r.status_code == 200:
-    with open(file_path, "wb") as f:
-      f.write(r.content)
+  if r.status_code == 200: #リクエストが成功した場合、画像ファイルを作成する処理を行う
+    with open(file_path, "wb") as f: #対象のファイルを書き込み用かつバイナリモードで開く withを使用することで処理後に自動的にファイルのクローズも行う
+      f.write(r.content) #テキストデータではなく画像データのため、content属性として書き込みを行う
 
 def main():
 
