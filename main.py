@@ -10,14 +10,14 @@ def download_image(url, file_path):
 
 def main():
 
-  with open("ids.txt", "r") as f: #抽出するサムネイルのurlを記載しているids.txtを指定する
-    lines = [x.strip() for x in f.readlines()]
+  with open("ids.txt", "r") as f: #ids.txtを読み込み用で開く withを使用することで処理後に自動的にファイルのクローズも行う
+    lines = [x.strip() for x in f.readlines()] #ids.txtから1行づつ取り出し、空白を削除したのち"lines"に配列として代入していく
     print(lines)
 
   for video_id in lines:
     url = "http://img.youtube.com/vi/{}/maxresdefault.jpg".format(video_id)
 
     download_image(url=url, file_path="images/thumbnails/{}.jpg".format(video_id))
-    
+
 
 main()
